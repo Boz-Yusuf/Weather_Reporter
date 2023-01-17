@@ -14,12 +14,17 @@
         action=""
       >
         <h1 class="text-5xl text-white font-medium">Weather Reports</h1>
-        <input class="py-0.5" type="text" />
-        <input class="bg-white py-0.5 font-medium" value="FIND" type="submit" />
-        <p></p>
+        <input id="city" class="py-0.5" type="text" />
+        <input
+          class="bg-white py-0.5 font-medium"
+          value="SEARCH"
+          type="button"
+          onclick="search()"
+        />
+        <p id="result"></p>
         <p></p>
       </form>
     </div>
-    <script type="module" src="/main.js"></script>
+    <script src="/main.js"></script>
   </body>
 </html>
