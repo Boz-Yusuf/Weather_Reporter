@@ -4,17 +4,16 @@ let result = document.getElementById("result");
 
 async function search() {
   let value = cityInput.value;
-  console.log(calculate(value));
   let report = await calculate(value);
-  console.log(report);
-
-  // console.log(value);
-  // calculate(value);
+  result.innerHTML = `Today ${value} will be ${report}`;
+  cityInput.value = "";
 }
 
 async function calculate(city) {
-  return fetch(
+  let a = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
   );
-  // .then((response) => response.json());
+
+  let i = await a.json();
+  return i.weather[0].description;
 }
